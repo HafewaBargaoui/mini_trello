@@ -1,11 +1,13 @@
 #rechercher list
 def search_list(board_fils: dict, key_board: str) -> list:
+    board_temp = board_fils
     return board_fils[key_board]
 
 #ajout element
 def add_element(list_parent: list, element_to_add: str | int | float) -> list:
-    list_parent.append(element_to_add)
-    return list_parent
+    list_temp = list_parent
+    list_temp.append(element_to_add)
+    return list_temp
 
 #suppression element
 def suppr_element(list_parent: list, element_to_rem: str | int | float) -> list:
@@ -22,7 +24,7 @@ def depl_element(board_fils: dict, key1_from: str, key2_to: str, element_to_move
 
 #listing
 def listing_element(list_show: list) -> None:
-    print(f"list_show")
+    print(f"list element: {list_show}")
 
 # dict_test = {
 #     "toto": [1,2,3,8],

@@ -65,7 +65,8 @@ def ajouter_board(board_parent: dict, key_fils: str, boards_fils: dict) -> dict:
         print(f"Ajout du board : {boards_fils}")
         dict_temp = board_parent
         dict_temp[key_fils] = boards_fils
-        print(f"Nouveau board: {dict_temp}")
+        print(f"Nouveau board:")
+        listing_boards(dict_temp)
         return dict_temp
     except:
         print("Clef non présente")

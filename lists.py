@@ -1,17 +1,18 @@
 import json
-board_parent = {
-    "dict_test" : {
-        "toto": [1,2,3,4],
-        "tata": [1,2,3,4],
-        "tutu": [1,2,3,4],
-},
+# board_parent = {
+#         "dict_test" : {
+#             "toto": [1,2,3,4],
+#             "tata": [1,2,3,4],
+#             "tutu": [1,2,3,4],
+#     },
 
-    "dict_test2" : {
-        "titi": [1,2,3,4],
-        "tyty": [1,2,3,4],
-        "toto": [1,2,3,4],
-}
-}
+#         "dict_test2" : {
+#             "titi": [1,2,3,4],
+#             "tyty": [1,2,3,4],
+#             "toto": [1,2,3,4],
+#     }
+# }
+
 def add_list_to_board(board_parent, board_name, key, new_list):
     """
     Ajoute une nouvelle liste sous la clé `key` dans le board `board_name` 
@@ -43,7 +44,7 @@ def delete_list_from_board(board_parent, board_name, key):
     else:
         print(f"Le board '{board_name}' n'existe pas.")
 
-delete_list_from_board(board_parent, "dict_test2", "titi")
+#delete_list_from_board(board_parent, "dict_test2", "titi")
 
 
 def list_lists_in_board(board_parent, board_name):
@@ -58,4 +59,4 @@ def list_lists_in_board(board_parent, board_name):
     else:
         print(f"Le board '{board_name}' n'existe pas.")
 
-list_lists_in_board(board_parent, "dict_test2")
+# list_lists_in_board(board_parent, "dict_test2")
