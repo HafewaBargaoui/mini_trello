@@ -27,7 +27,20 @@ def add_list_to_board(board_parent, board_name, key, new_list):
     else:
         print(f"Le board '{board_name}' n'existe pas.")
 
-#delete_list_from_board(dict_test, "toto")
-add_list_to_board(board_parent, "dict_test2", "test", [1])
 
-print (board_parent )
+#add_list_to_board(board_parent, "dict_test2", "test", [1])
+
+#print (board_parent )
+
+def delete_list_from_board(board_parent, board_name, key):
+    if board_name in board_parent:
+        board = board_parent[board_name]
+        if key in board:
+            removed = board.pop(key)
+            print(f"Clé '{key}' supprimée du board '{board_name}' : {removed}")
+        else:
+            print(f"La clé '{key}' n'existe pas dans le board '{board_name}'.")
+    else:
+        print(f"Le board '{board_name}' n'existe pas.")
+
+delete_list_from_board(board_parent, "dict_test2", "titi")
