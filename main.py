@@ -1,14 +1,33 @@
-import json
+import boards
 
 JSON_FILE = "mini_trello.json"
 
-try:
-    with open(JSON_FILE, 'r', encoding='utf-8') as f:
-        data_ent = json.load(f)
-        print(f"Fichier '{JSON_FILE}' chargé dans la variable 'data_ent'.")
-except FileNotFoundError:
-    data_ent = {}  # Dictionnaire vide par défaut
-    with open(JSON_FILE, 'w', encoding='utf-8') as f:
-        json.dump(data_ent, f, ensure_ascii=False, indent=4)
-    print(f"Fichier '{JSON_FILE}' créé avec un dictionnaire vide dans 'data_ent'.")
+dict_test = {
+    "toto": [1,2,3,4],
+    "tata": [1,2,3,4],
+    "tutu": [1,2,3,4],
+}
 
+dict_test2 = {
+    "titi": [1,2,3,4],
+    "tyty": [1,2,3,4],
+    "toto": [1,2,3,4],
+}
+print("="*40)
+boards.create_json(JSON_FILE)
+print("="*40)
+boards.modify_json(JSON_FILE,boards.creation_board("Board1_fils", dict_test))
+print("="*40)
+boards.listing_boards(boards.get_json(JSON_FILE))
+print("="*40)
+data_temp = boards.ajouter_board(boards.get_json(JSON_FILE), "Board2_fils", dict_test2)
+print("="*40)
+boards.listing_boards(boards.get_json(JSON_FILE))
+print("="*40)
+data_temp = boards.suppression_board(data_temp, "Board1_fils")
+print("="*40)
+boards.listing_boards(data_temp)
+print("="*40)
+boards.modify_json(JSON_FILE, data_temp)
+print("="*40)
+boards.suppression_boards(JSON_FILE)
