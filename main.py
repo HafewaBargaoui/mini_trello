@@ -119,5 +119,5 @@ print("="*40)
 print("="*40)
 print("="*40)
 
-# print("#clear du fichier JSON")
-# boards.suppression_boards(JSON_FILE)
+print("#clear du fichier JSON")
+boards.suppression_boards(JSON_FILE)
