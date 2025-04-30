@@ -13,7 +13,10 @@ import json
 #     }
 # }
 
-def add_list_to_board(board_parent, board_name, key, new_list):
+def add_list_to_board( board_parent: dict[str, dict[str, list]],
+    board_name: str,
+    key: str,
+    new_list: list)-> None:
     """
     Ajoute une nouvelle liste sous la clé `key` dans le board `board_name` 
     du dictionnaire `board_parent`, si cette clé n'existe pas encore.
@@ -33,7 +36,22 @@ def add_list_to_board(board_parent, board_name, key, new_list):
 
 #print (board_parent )
 
-def delete_list_from_board(board_parent, board_name, key):
+def delete_list_from_board( board_parent: dict[str, dict[str, list]],
+    board_name: str,
+    key: str
+) -> None:
+    """
+    Supprime une liste identifiée par `key` dans le board `board_name` 
+    contenu dans `board_parent`.
+
+    Args:
+        board_parent (dict): Le dictionnaire principal contenant tous les boards.
+        board_name (str): Le nom du board d'où supprimer la liste.
+        key (str): La clé de la liste à supprimer dans ce board.
+
+    Returns:
+        None. Modifie `board_parent` en place.
+    """
     if board_name in board_parent:
         board = board_parent[board_name]
         if key in board:
@@ -46,10 +64,19 @@ def delete_list_from_board(board_parent, board_name, key):
 
 #delete_list_from_board(board_parent, "dict_test2", "titi")
 
-
-def list_lists_in_board(board_parent, board_name):
+def list_lists_in_board(board_parent: dict[str, dict[str, list]],
+    board_name: str
+) -> None:
     """
-    Affiche toutes les clés (listes) présentes dans le board donné.
+    Affiche toutes les listes (clés) présentes dans un board donné.
+
+    Args:
+        board_parent (dict): Le dictionnaire principal contenant tous les boards.
+                             Chaque board est un dictionnaire de listes.
+        board_name (str): Le nom du board dont on veut afficher les listes.
+
+    Returns:
+        None. Affiche les listes à l'écran.
     """
     if board_name in board_parent:
         board = board_parent[board_name]
