@@ -44,3 +44,18 @@ def delete_list_from_board(board_parent, board_name, key):
         print(f"Le board '{board_name}' n'existe pas.")
 
 delete_list_from_board(board_parent, "dict_test2", "titi")
+
+
+def list_lists_in_board(board_parent, board_name):
+    """
+    Affiche toutes les clés (listes) présentes dans le board donné.
+    """
+    if board_name in board_parent:
+        board = board_parent[board_name]
+        print(f"Listes dans le board '{board_name}' :")
+        for list_name, content in board.items():
+            print(f" - {list_name} : {content}")
+    else:
+        print(f"Le board '{board_name}' n'existe pas.")
+
+list_lists_in_board(board_parent, "dict_test2")
